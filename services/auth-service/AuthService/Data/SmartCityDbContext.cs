@@ -6,8 +6,8 @@ namespace AuthService.Data
     public class SmartCityDbContext : DbContext
     {
         public SmartCityDbContext(DbContextOptions<SmartCityDbContext> options) : base(options) { }
-        // DbSets - these represent your database tables
-        public DbSet<User>Users { get; set; }
+
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -18,11 +18,11 @@ namespace AuthService.Data
                 entity.HasIndex(e => e.Username).IsUnique();
                 entity.HasIndex(e => e.Email).IsUnique();
 
-                entity.Property(e => e.CreatedAt).HasDefaultValueSql("NOW()");
-                entity.Property(e => e.UpdatedAt).HasDefaultValueSql("NOW()");
+                // Use UTC time in database
+                entity.Property(e => e.CreatedAt).HasDefaultValueSql("NOW() AT TIME ZONE 'UTC'");
+                entity.Property(e => e.UpdatedAt).HasDefaultValueSql("NOW() AT TIME ZONE 'UTC'");
                 entity.Property(e => e.IsActive).HasDefaultValue(true);
-
-            } );
+            });
         }
     }
 }
