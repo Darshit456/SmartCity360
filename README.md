@@ -1,9 +1,9 @@
 <div align="center">
   <!-- Logo for light mode -->
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/logo/smartcity360-logo.png">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/logo/smartcity360-light.png">
-    <img src="./assets/logo/smartcity360-logo-light.png" alt="SmartCity360 Logo" width="200" height="200">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo/SmartCity360-logo.png">
+    <source media="(prefers-color-scheme: light)" srcset="assets/logo/SmartCity360-light.png">
+    <img src="./assets/logo/SmartCity360-light.png" alt="SmartCity360 Logo" width="200" height="200">
   </picture>
   
   # SmartCity360
