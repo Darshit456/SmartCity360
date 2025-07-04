@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using AuthService.DTOs;
 using AuthService.Services;
+using Microsoft.EntityFrameworkCore;
+using AuthService.Data;
 
 namespace AuthService.Controllers
 {
@@ -10,11 +12,13 @@ namespace AuthService.Controllers
     {
         private readonly IAuthService _authService;
         private readonly ILogger<AuthController> _logger;
+        private readonly SmartCityDbContext _context;
 
-        public AuthController(IAuthService authService, ILogger<AuthController> logger)
+        public AuthController(IAuthService authService, ILogger<AuthController> logger, SmartCityDbContext context)
         {
             _authService = authService;
             _logger = logger;
+            _context = context;
         }
 
         [HttpPost("register")]
@@ -77,6 +81,33 @@ namespace AuthService.Controllers
         public IActionResult TestAuth()
         {
             return Ok(new { message = "AuthController is working", timestamp = DateTime.Now });
+        }
+
+        [HttpGet("users")]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            try
+            {
+                var users = await _context.Users
+                    .Select(u => new
+                    {
+                        u.Id,
+                        u.Username,
+                        u.Email,
+                        u.FirstName,
+                        u.LastName,
+                        u.Role,
+                        u.IsActive,
+                        u.CreatedAt
+                    })
+                    .ToListAsync();
+
+                return Ok(users);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Error retrieving users", details = ex.Message });
+            }
         }
     }
 }
