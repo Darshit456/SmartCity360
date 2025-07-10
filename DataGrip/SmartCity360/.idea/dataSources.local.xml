@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="DB-251.26094.87">
-    <data-source name="SmartCity360 - AuthService" uuid="257944f3-7278-4d8f-ba3e-995eac56f2b6">
+    <data-source name="postgres@smartcity360_Auth" uuid="2c4fd960-c027-4edd-bb22-ecdcb7307fe5">
       <database-info product="PostgreSQL" version="15.4 (Debian 15.4-1.pgdg110+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.7.3" dbms="POSTGRES" exact-version="15.4" exact-driver-version="42.7">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
@@ -16,7 +16,7 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
-    <data-source name="SmartCity360 - AdminService" uuid="926eb6c3-0e6a-4c75-a248-08c63688fa61">
+    <data-source name="postgres@smartcity360_admin" uuid="64a396a2-fe46-40ac-9a49-7390bced50ac">
       <database-info product="PostgreSQL" version="15.4 (Debian 15.4-1.pgdg110+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.7.3" dbms="POSTGRES" exact-version="15.4" exact-driver-version="42.7">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
