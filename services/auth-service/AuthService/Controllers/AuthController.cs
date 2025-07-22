@@ -3,9 +3,11 @@ using AuthService.DTOs;
 using AuthService.Services;
 using Microsoft.EntityFrameworkCore;
 using AuthService.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AuthService.Controllers
 {
+    
     [ApiController]
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
@@ -20,7 +22,8 @@ namespace AuthService.Controllers
             _logger = logger;
             _context = context;
         }
-
+        
+        
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterUserDto registerDto)
         {
@@ -49,7 +52,8 @@ namespace AuthService.Controllers
                 return StatusCode(500, new { message = "Internal server error during registration" });
             }
         }
-
+        
+        
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginUserDto loginDto)
         {
@@ -82,7 +86,8 @@ namespace AuthService.Controllers
         {
             return Ok(new { message = "AuthController is working", timestamp = DateTime.Now });
         }
-
+        
+        [Authorize(Roles = "Admin")]
         [HttpGet("users")]
         public async Task<IActionResult> GetAllUsers()
         {

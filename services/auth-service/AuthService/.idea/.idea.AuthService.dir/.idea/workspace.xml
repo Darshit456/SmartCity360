@@ -10,12 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e917e17c-2628-4ca1-af2c-3196c1ce8457" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../infrastructure/docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../infrastructure/docker/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AuthService.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AuthService.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/SmartCityDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/SmartCityDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/AuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IAuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Interface/IAuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherForecast.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +45,7 @@
     &quot;.NET Launch Settings Profile.AuthService: https.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;frontend-development&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -114,6 +116,10 @@
       <workItem from="1752076606538" duration="4000" />
       <workItem from="1752132319255" duration="1762000" />
       <workItem from="1753078812521" duration="417000" />
+      <workItem from="1753163667795" duration="3942000" />
+      <workItem from="1753169557651" duration="126000" />
+      <workItem from="1753169704682" duration="1308000" />
+      <workItem from="1753171225818" duration="2300000" />
     </task>
     <servers />
   </component>

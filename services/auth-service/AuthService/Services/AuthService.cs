@@ -15,13 +15,13 @@ namespace AuthService.Services
     {
         private readonly SmartCityDbContext _context;
         private readonly ILogger<AuthService> _logger;
-        private readonly IConfiguration _configuration;
+        private readonly IJwtService _jwtService;
 
-        public AuthService(SmartCityDbContext context, ILogger<AuthService> logger, IConfiguration configuration)
+        public AuthService(SmartCityDbContext context, ILogger<AuthService> logger, IJwtService jwtService)
         {
             _context = context;
             _logger = logger;
-            _configuration = configuration;
+            _jwtService = jwtService; 
         }
 
         public async Task<AuthResponseDto?> RegisterUserAsync(RegisterUserDto registerDto)
@@ -82,8 +82,7 @@ namespace AuthService.Services
                 _logger.LogInformation("User created successfully with ID: {UserId}", user.Id);
 
                 // Generate JWT token
-                var token = GenerateJwtToken(user);
-
+                var token = _jwtService.GenerateToken(user);
                 return new AuthResponseDto
                 {
                     Token = token,
@@ -128,7 +127,7 @@ namespace AuthService.Services
                 await _context.SaveChangesAsync();
 
                 // Generate JWT token
-                var token = GenerateJwtToken(user);
+                var token = _jwtService.GenerateToken(user);
 
                 _logger.LogInformation("Login successful for user: {Username}", user.Username);
 
@@ -147,42 +146,7 @@ namespace AuthService.Services
             }
         }
 
-        public string GenerateJwtToken(User user)
-        {
-            var jwtSettings = _configuration.GetSection("JwtSettings");
-            var secretKey = jwtSettings["SecretKey"];
-            var issuer = jwtSettings["Issuer"];
-            var audience = jwtSettings["Audience"];
-
-            if (string.IsNullOrEmpty(secretKey))
-            {
-                throw new InvalidOperationException("JWT SecretKey is not configured");
-            }
-
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
-            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-            var claims = new[]
-            {
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Name, user.Username),
-                new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.Role, user.Role),
-                new Claim("FirstName", user.FirstName ?? ""),
-                new Claim("LastName", user.LastName ?? "")
-            };
-
-            var token = new JwtSecurityToken(
-                issuer: issuer,
-                audience: audience,
-                claims: claims,
-                expires: DateTime.UtcNow.AddHours(24), // Use UTC
-                signingCredentials: credentials
-            );
-
-            return new JwtSecurityTokenHandler().WriteToken(token);
-        }
-
+        
         public string HashPassword(string password)
         {
             return BCrypt.Net.BCrypt.HashPassword(password, BCrypt.Net.BCrypt.GenerateSalt());
