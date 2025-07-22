@@ -5,27 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd47bc7d-e1f2-49a9-9bda-b7724cb9e833" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360.-TZTsQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360.-TZTsQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360.-TZTsQ/schema/public.abK9xQ.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/63e679e8-4161-4790-b744-a33e07733140.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/63e679e8-4161-4790-b744-a33e07733140/storage_v2/_src_/database/smartcity360_auth.LtON_g.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/63e679e8-4161-4790-b744-a33e07733140/storage_v2/_src_/database/smartcity360_auth.LtON_g/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/63e679e8-4161-4790-b744-a33e07733140/storage_v2/_src_/database/smartcity360_auth.LtON_g/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/63e679e8-4161-4790-b744-a33e07733140/storage_v2/_src_/database/smartcity360_auth.LtON_g/schema/public.abK9xQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../services/auth-service/AuthService/Migrations/20250722085640_AddRoleValidationConstraint.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../services/auth-service/AuthService/Migrations/20250722085640_AddRoleValidationConstraint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../services/auth-service/AuthService/.idea/.idea.AuthService.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../services/auth-service/AuthService/.idea/.idea.AuthService.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../services/auth-service/AuthService/Credentials.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../services/auth-service/AuthService/Credentials.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../services/auth-service/AuthService/DTOs/RegisterUserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../services/auth-service/AuthService/DTOs/RegisterUserDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../services/auth-service/AuthService/Data/SmartCityDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../services/auth-service/AuthService/Data/SmartCityDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../services/auth-service/AuthService/Migrations/SmartCityDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../services/auth-service/AuthService/Migrations/SmartCityDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../services/auth-service/AuthService/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../services/auth-service/AuthService/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../services/auth-service/AuthService/Services/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../services/auth-service/AuthService/Services/AuthService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -10,27 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e917e17c-2628-4ca1-af2c-3196c1ce8457" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360.-TZTsQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360.-TZTsQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360.-TZTsQ/schema/public.abK9xQ.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/63e679e8-4161-4790-b744-a33e07733140.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/63e679e8-4161-4790-b744-a33e07733140/storage_v2/_src_/database/smartcity360_auth.LtON_g.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/63e679e8-4161-4790-b744-a33e07733140/storage_v2/_src_/database/smartcity360_auth.LtON_g/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/63e679e8-4161-4790-b744-a33e07733140/storage_v2/_src_/database/smartcity360_auth.LtON_g/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/63e679e8-4161-4790-b744-a33e07733140/storage_v2/_src_/database/smartcity360_auth.LtON_g/schema/public.abK9xQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Migrations/20250722085640_AddRoleValidationConstraint.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Migrations/20250722085640_AddRoleValidationConstraint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AuthService.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AuthService.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Credentials.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Credentials.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/RegisterUserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/RegisterUserDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/SmartCityDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/SmartCityDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/SmartCityDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/SmartCityDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/AuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +114,7 @@
       <workItem from="1753163667795" duration="3942000" />
       <workItem from="1753169557651" duration="126000" />
       <workItem from="1753169704682" duration="1308000" />
-      <workItem from="1753171225818" duration="5465000" />
+      <workItem from="1753171225818" duration="8154000" />
     </task>
     <servers />
   </component>
