@@ -25,79 +25,84 @@ namespace AuthService.Services
         }
 
         public async Task<AuthResponseDto?> RegisterUserAsync(RegisterUserDto registerDto)
+{
+    try
+    {
+        _logger.LogInformation("Starting registration for: {FirstName} {LastName} ({Email})",
+            registerDto.FirstName, registerDto.LastName, registerDto.Email);
+
+        // Generate username from FirstName + LastName
+        var generatedUsername = $"{registerDto.FirstName} {registerDto.LastName}".Trim();
+        _logger.LogInformation("Generated username: '{Username}'", generatedUsername);
+
+        // Check total users first
+        var totalUsers = await _context.Users.CountAsync();
+        _logger.LogInformation("Current users in database: {Count}", totalUsers);
+
+        // Check for existing email
+        var existingEmail = await _context.Users
+            .Where(u => u.Email == registerDto.Email)
+            .FirstOrDefaultAsync();
+
+        if (existingEmail != null)
         {
-            try
-            {
-                _logger.LogInformation("Starting registration for: {FirstName} {LastName} ({Email})",
-                    registerDto.FirstName, registerDto.LastName, registerDto.Email);
-
-                // Generate username from FirstName + LastName
-                var generatedUsername = $"{registerDto.FirstName} {registerDto.LastName}".Trim();
-                _logger.LogInformation("Generated username: '{Username}'", generatedUsername);
-
-                // Check total users first
-                var totalUsers = await _context.Users.CountAsync();
-                _logger.LogInformation("Current users in database: {Count}", totalUsers);
-
-                // Check for existing email
-                var existingEmail = await _context.Users
-                    .Where(u => u.Email == registerDto.Email)
-                    .FirstOrDefaultAsync();
-
-                if (existingEmail != null)
-                {
-                    _logger.LogWarning("Email already exists: {Email}", registerDto.Email);
-                    return null;
-                }
-
-                // Check for existing username
-                var existingUsername = await _context.Users
-                    .Where(u => u.Username == generatedUsername)
-                    .FirstOrDefaultAsync();
-
-                if (existingUsername != null)
-                {
-                    _logger.LogWarning("Username already exists: {Username}", generatedUsername);
-                    return null;
-                }
-
-                _logger.LogInformation("No conflicts found. Creating user...");
-
-                // Create new user - don't set CreatedAt/UpdatedAt, let database handle it
-                var user = new User
-                {
-                    Username = generatedUsername,
-                    Email = registerDto.Email,
-                    PasswordHash = HashPassword(registerDto.Password),
-                    Role = registerDto.Role ?? "Citizen",
-                    FirstName = registerDto.FirstName,
-                    LastName = registerDto.LastName,
-                    IsActive = true
-                    // Don't set CreatedAt/UpdatedAt - let database defaults handle it
-                };
-
-                _context.Users.Add(user);
-                await _context.SaveChangesAsync();
-
-                _logger.LogInformation("User created successfully with ID: {UserId}", user.Id);
-
-                // Generate JWT token
-                var token = _jwtService.GenerateToken(user);
-                return new AuthResponseDto
-                {
-                    Token = token,
-                    Username = user.Username,
-                    Role = user.Role,
-                    ExpiresAt = DateTime.UtcNow.AddHours(24) // Use UTC for consistency
-                };
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Registration failed for {FirstName} {LastName}: {Error}",
-                    registerDto.FirstName, registerDto.LastName, ex.Message);
-                return null;
-            }
+            _logger.LogWarning("Email already exists: {Email}", registerDto.Email);
+            return null;
         }
+
+        // Check for existing username
+        var existingUsername = await _context.Users
+            .Where(u => u.Username == generatedUsername)
+            .FirstOrDefaultAsync();
+
+        if (existingUsername != null)
+        {
+            _logger.LogWarning("Username already exists: {Username}", generatedUsername);
+            return null;
+        }
+
+        _logger.LogInformation("No conflicts found. Creating user...");
+
+        // Create new user - don't set CreatedAt/UpdatedAt, let database handle it
+        var user = new User
+        {
+            Username = generatedUsername,
+            Email = registerDto.Email,
+            PasswordHash = HashPassword(registerDto.Password),
+            Role = registerDto.Role ?? "Citizen", // Default to Citizen if null
+            FirstName = registerDto.FirstName,
+            LastName = registerDto.LastName,
+            IsActive = true
+            // Don't set CreatedAt/UpdatedAt - let database defaults handle it
+        };
+
+        _context.Users.Add(user);
+        await _context.SaveChangesAsync();
+
+        _logger.LogInformation("User created successfully with ID: {UserId}", user.Id);
+
+        // Generate JWT token
+        var token = _jwtService.GenerateToken(user);
+        return new AuthResponseDto
+        {
+            Token = token,
+            Username = user.Username,
+            Role = user.Role,
+            ExpiresAt = DateTime.UtcNow.AddHours(24) // Use UTC for consistency
+        };
+    }
+    catch (DbUpdateException ex) when (ex.InnerException?.Message?.Contains("CK_User_Role") == true)
+    {
+        _logger.LogError("Invalid role provided: {Role}", registerDto.Role);
+        throw new ArgumentException("Invalid role. Valid roles are: Admin, CityPlanner, Citizen");
+    }
+    catch (Exception ex)
+    {
+        _logger.LogError(ex, "Registration failed for {FirstName} {LastName}: {Error}",
+            registerDto.FirstName, registerDto.LastName, ex.Message);
+        return null;
+    }
+}
 
         public async Task<AuthResponseDto?> LoginUserAsync(LoginUserDto loginDto)
         {

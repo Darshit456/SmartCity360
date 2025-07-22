@@ -22,6 +22,15 @@ namespace AuthService.Data
                 entity.Property(e => e.CreatedAt).HasDefaultValueSql("NOW() AT TIME ZONE 'UTC'");
                 entity.Property(e => e.UpdatedAt).HasDefaultValueSql("NOW() AT TIME ZONE 'UTC'");
                 entity.Property(e => e.IsActive).HasDefaultValue(true);
+
+                // 🔥 DATABASE-LEVEL ROLE VALIDATION
+                entity.Property(e => e.Role)
+                    .HasDefaultValue("Citizen")
+                    .HasMaxLength(50);
+
+                // Add check constraint for valid roles
+                entity.HasCheckConstraint("CK_User_Role", 
+                    "\"Role\" IN ('Admin', 'CityPlanner', 'Citizen')");
             });
         }
     }
