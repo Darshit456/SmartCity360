@@ -1,7 +1,8 @@
 version: '3.8'
 services:
-  postgres:
+  postgres: 
     image: postgis/postgis:15-3.3
+    container_name: smartcity360-postgres
     environment:
       POSTGRES_DB: smartcity360
       POSTGRES_USER: postgres
@@ -9,8 +10,8 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - smartcity360_postgres_data:/var/lib/postgresql/data
     restart: unless-stopped
 
 volumes:
-  postgres_data:
+  smartcity360_postgres_data:

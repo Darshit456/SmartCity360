@@ -15,5 +15,12 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/smartcity360_admin</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="Azure VenueBooking" uuid="be02776c-1487-4f08-bcf0-34dadb246d08">
+      <driver-ref>azure.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://venuebookingserver.database.windows.net:1433;database=venuebookingdb</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

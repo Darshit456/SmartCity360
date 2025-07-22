@@ -9,7 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e917e17c-2628-4ca1-af2c-3196c1ce8457" name="Changes" comment="" />
+    <list default="true" id="e917e17c-2628-4ca1-af2c-3196c1ce8457" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../infrastructure/docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../infrastructure/docker/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AuthService.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AuthService.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/SmartCityDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/SmartCityDbContextModelSnapshot.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,24 +36,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.AuthService: IIS Express.executor": "Run",
-    ".NET Launch Settings Profile.AuthService: http.executor": "Run",
-    ".NET Launch Settings Profile.AuthService: https.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "frontend-development",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.AuthService: IIS Express.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.AuthService: http.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.AuthService: https.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;frontend-development&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.AuthService: https">
     <configuration name="AuthService: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/AuthService.csproj" />
@@ -106,6 +113,7 @@
       <workItem from="1752044927623" duration="10036000" />
       <workItem from="1752076606538" duration="4000" />
       <workItem from="1752132319255" duration="1762000" />
+      <workItem from="1753078812521" duration="417000" />
     </task>
     <servers />
   </component>

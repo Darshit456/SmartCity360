@@ -31,5 +31,21 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
+    <data-source name="Azure VenueBooking" uuid="be02776c-1487-4f08-bcf0-34dadb246d08">
+      <database-info product="Microsoft SQL Server" version="12.00.601" jdbc-version="4.3" driver-name="Microsoft JDBC Driver 12.8 for SQL Server" driver-version="12.8.1.0" dbms="AZURE" exact-version="12.0.601" exact-driver-version="12.8">
+        <extra-name-characters>$#@</extra-name-characters>
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>sqladmin</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
   </component>
 </project>
