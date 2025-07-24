@@ -3,11 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using AdminService.Models;
 using AdminService.DTOs;
 using System.Text.Json;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace AdminService.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(Roles = "Admin")] // 🔒 Protect entire controller - Admin only
     public class AdminController : ControllerBase
     {
         private readonly AdminDbContext _context;
@@ -32,6 +35,10 @@ namespace AdminService.Controllers
         {
             try
             {
+                // Get current user info from JWT token
+                var currentUserId = GetCurrentUserId();
+                var currentUserName = GetCurrentUserName();
+
                 var canConnect = _context.Database.CanConnect();
                 var response = new ApiResponseDto<object>
                 {
@@ -42,7 +49,9 @@ namespace AdminService.Controllers
                         Status = "Healthy",
                         Database = canConnect ? "Connected" : "Disconnected",
                         Timestamp = DateTime.UtcNow,
-                        Port = "5001"
+                        Port = "5001",
+                        AuthenticatedUser = currentUserName,
+                        UserId = currentUserId
                     }
                 };
 
@@ -65,11 +74,20 @@ namespace AdminService.Controllers
         {
             try
             {
-                _logger.LogInformation("Attempting to retrieve users from AuthService");
+                var currentUserId = GetCurrentUserId();
+                _logger.LogInformation($"Admin user {currentUserId} attempting to retrieve users from AuthService");
 
                 var httpClient = _httpClientFactory.CreateClient();
                 var authServiceUrl = _configuration["ServiceUrls:AuthService"];
                 var requestUrl = $"{authServiceUrl}/api/auth/users";
+
+                // Add JWT token to the request for AuthService
+                var token = GetCurrentUserToken();
+                if (!string.IsNullOrEmpty(token))
+                {
+                    httpClient.DefaultRequestHeaders.Authorization = 
+                        new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                }
 
                 _logger.LogInformation($"Calling AuthService at: {requestUrl}");
 
@@ -83,9 +101,9 @@ namespace AdminService.Controllers
                         PropertyNameCaseInsensitive = true
                     });
 
-                    // Log admin activity
+                    // Log admin activity with real user ID
                     await LogAdminActivity(
-                        userId: 1, // TODO: Get from JWT token
+                        userId: currentUserId,
                         action: "Retrieved user list",
                         details: $"Successfully retrieved {users?.Count ?? 0} users from AuthService"
                     );
@@ -139,7 +157,8 @@ namespace AdminService.Controllers
         {
             try
             {
-                _logger.LogInformation("Retrieving admin logs");
+                var currentUserId = GetCurrentUserId();
+                _logger.LogInformation($"Admin user {currentUserId} retrieving admin logs");
 
                 var logs = await _context.AdminLogs
                     .OrderByDescending(l => l.Timestamp)
@@ -181,6 +200,8 @@ namespace AdminService.Controllers
         {
             try
             {
+                var currentUserId = GetCurrentUserId();
+
                 // Input validation
                 if (string.IsNullOrWhiteSpace(request.Key) || string.IsNullOrWhiteSpace(request.Value))
                 {
@@ -192,7 +213,7 @@ namespace AdminService.Controllers
                     });
                 }
 
-                _logger.LogInformation($"Updating system setting: {request.Key}");
+                _logger.LogInformation($"Admin user {currentUserId} updating system setting: {request.Key}");
 
                 var setting = await _context.SystemSettings
                     .FirstOrDefaultAsync(s => s.Key == request.Key);
@@ -204,7 +225,7 @@ namespace AdminService.Controllers
                         Key = request.Key,
                         Value = request.Value,
                         Description = request.Description,
-                        UpdatedBy = 1, // TODO: Get from JWT token
+                        UpdatedBy = currentUserId, // Real user ID from JWT
                         UpdatedAt = DateTime.UtcNow
                     };
                     _context.SystemSettings.Add(setting);
@@ -213,15 +234,15 @@ namespace AdminService.Controllers
                 {
                     setting.Value = request.Value;
                     setting.Description = request.Description;
-                    setting.UpdatedBy = 1; // TODO: Get from JWT token
+                    setting.UpdatedBy = currentUserId; // Real user ID from JWT
                     setting.UpdatedAt = DateTime.UtcNow;
                 }
 
                 await _context.SaveChangesAsync();
 
-                // Log admin activity
+                // Log admin activity with real user ID
                 await LogAdminActivity(
-                    userId: 1,
+                    userId: currentUserId,
                     action: "Updated system setting",
                     details: $"Updated setting '{request.Key}' to '{request.Value}'"
                 );
@@ -252,7 +273,8 @@ namespace AdminService.Controllers
         {
             try
             {
-                _logger.LogInformation("Retrieving system settings");
+                var currentUserId = GetCurrentUserId();
+                _logger.LogInformation($"Admin user {currentUserId} retrieving system settings");
 
                 var settings = await _context.SystemSettings
                     .OrderBy(s => s.Key)
@@ -279,6 +301,33 @@ namespace AdminService.Controllers
             }
         }
 
+        // 🔧 Helper methods to extract user info from JWT token
+        private int GetCurrentUserId()
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            return int.TryParse(userIdClaim, out int userId) ? userId : 0;
+        }
+
+        private string GetCurrentUserName()
+        {
+            return User.FindFirst(ClaimTypes.Name)?.Value ?? "Unknown";
+        }
+
+        private string GetCurrentUserRole()
+        {
+            return User.FindFirst(ClaimTypes.Role)?.Value ?? "Unknown";
+        }
+
+        private string GetCurrentUserToken()
+        {
+            var authHeader = HttpContext.Request.Headers["Authorization"].FirstOrDefault();
+            if (authHeader != null && authHeader.StartsWith("Bearer "))
+            {
+                return authHeader.Substring("Bearer ".Length).Trim();
+            }
+            return string.Empty;
+        }
+
         private async Task LogAdminActivity(int userId, string action, string details)
         {
             try
@@ -295,7 +344,7 @@ namespace AdminService.Controllers
                 _context.AdminLogs.Add(adminLog);
                 await _context.SaveChangesAsync();
 
-                _logger.LogInformation($"Admin activity logged: {action}");
+                _logger.LogInformation($"Admin activity logged: {action} by user {userId}");
             }
             catch (Exception ex)
             {

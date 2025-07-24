@@ -10,9 +10,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e917e17c-2628-4ca1-af2c-3196c1ce8457" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360.-TZTsQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360.-TZTsQ/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360.-TZTsQ/schema/public.abK9xQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360_auth.LtON_g.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360_auth.LtON_g/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360_auth.LtON_g/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360_auth.LtON_g/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360_auth.LtON_g/schema/public.abK9xQ.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../admin-service/AdminService/.idea/.idea.AdminService.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../admin-service/AdminService/.idea/.idea.AdminService.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../admin-service/AdminService/Controllers/AdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../admin-service/AdminService/Controllers/AdminController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../admin-service/AdminService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../admin-service/AdminService/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../admin-service/AdminService/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../admin-service/AdminService/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AuthService.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AuthService.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +127,12 @@
       <workItem from="1753163667795" duration="3942000" />
       <workItem from="1753169557651" duration="126000" />
       <workItem from="1753169704682" duration="1308000" />
-      <workItem from="1753171225818" duration="8154000" />
+      <workItem from="1753171225818" duration="8212000" />
+      <workItem from="1753265930279" duration="237000" />
+      <workItem from="1753266228383" duration="23000" />
+      <workItem from="1753289142790" duration="2257000" />
+      <workItem from="1753292605846" duration="12000" />
+      <workItem from="1753338839047" duration="2124000" />
     </task>
     <servers />
   </component>

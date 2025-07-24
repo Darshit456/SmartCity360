@@ -5,19 +5,45 @@
     <projectFile profileName="http">AdminService.csproj</projectFile>
     <projectFile profileName="https">AdminService.csproj</projectFile>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8493eb7-08ab-4e8d-80e2-168f8df20393" name="Changes" comment="" />
+    <list default="true" id="c8493eb7-08ab-4e8d-80e2-168f8df20393" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360.-TZTsQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360.-TZTsQ/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360.-TZTsQ/schema/public.abK9xQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360_auth.LtON_g.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360_auth.LtON_g/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360_auth.LtON_g/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360_auth.LtON_g/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/dataSources/2c4fd960-c027-4edd-bb22-ecdcb7307fe5/storage_v2/_src_/database/smartcity360_auth.LtON_g/schema/public.abK9xQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DataGrip/SmartCity360/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AdminService.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AdminService.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AdminController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../auth-service/AuthService/.idea/.idea.AuthService.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../auth-service/AuthService/.idea/.idea.AuthService.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../auth-service/AuthService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../auth-service/AuthService/Program.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/43deb729742af823ac4d5c6f296e2c7219c565ebd15c41f62adaa517ba12cb8/HttpClientFactoryExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2zd0p3vipifKEnxnHvU2ngVDZEV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -25,9 +51,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    ".NET Launch Settings Profile.AdminService: IIS Express.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -88,6 +120,9 @@
       <option name="presentableId" value="Default" />
       <updated>1752045821325</updated>
       <workItem from="1752045822569" duration="44000" />
+      <workItem from="1753266009754" duration="157000" />
+      <workItem from="1753292265743" duration="247000" />
+      <workItem from="1753338815380" duration="3021000" />
     </task>
     <servers />
   </component>
